@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form id="formulario" action="/" method="POST" type="submit">
+    <select id="eassociado" name="eassociado">
+        <option disabled selected value> -- Selecione uma opção -- </option>
+        <option>ABRAPP</option>
+        <option>ABAAI</option>
+        <option>IBGC</option>
+        <option>ABRACAM</option>
+        <option>ABBC</option>
+        <option>Associados Ancord</option>
+        <option>Não Associados</option>
+    </select>
+
+    <select name="ingresso" id="chkveg">
+
+        <option value="https://pag.ae/7ULKPL7TH">Associados Ancord + C.Dados = R$700,00</option>
+        <option value="https://pag.ae/7ULKQ8Zm2">Associados Ancord Normal = R$800,00</option>
+        <option value="https://pag.ae/7UTdp8_CG">Associados Entidades Apoiadoras + C.Dados = R$875,00</option>
+        <option value="https://pag.ae/7UTdpwWem">Associados Entidades Apoiadoras Normal = R$1.000,00</option>
+        <option value="https://pag.ae/7UTdpPZjn">Não Associados + C.Dados = R$1.100,00</option>
+        <option value="https://pag.ae/7UTdq2JsG">Não Associados Normal = R$1.250,00</option>
+    </select>
+
+    <button id="btnget">Enviar</button>
+</form>
+</body>
+
+<script>	  
+    $(document).ready(function() {
+
+        $(document).on('click', '#btnget', function(e){
+            e.preventDefault();
+
+            let formValido = document.getElementById("formulario").checkValidity();
+
+            if (formValido) {
+                $(location).attr('href', $('#chkveg').val())
+            }
+
+        });
+
+    });
+</script>
+</html>
